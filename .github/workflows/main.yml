@@ -7,7 +7,7 @@ on:
     branches:
       - main
   schedule:
-    - cron: "0 0 * * *" # 每天的 0:00 执行
+    - cron: "1 * * * *" # 每天的 0:00 执行
 
 jobs:
   autogreen:
@@ -30,8 +30,8 @@ jobs:
 
       - name: Auto commit with random number
         run: |
-          git config --local user.email "ikunycj@users.noreply.github.com" 
-          git config --local user.name "ikunycj"
+          git config --local user.email "lry998qwas@gmail.com" 
+          git config --local user.name "Pigcolaaa"
           git remote set-url origin https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
           git pull --rebase
           ./random_commit.sh
